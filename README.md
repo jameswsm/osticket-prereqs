@@ -1,4 +1,4 @@
-<p align="center">
+![image](https://github.com/jameswsm/osticket-prereqs/assets/170709350/20efc2d7-df89-4375-96f8-33bc709015db)![image](https://github.com/jameswsm/osticket-prereqs/assets/170709350/b7cc4101-a3c3-4085-87c2-8a556afb58be)<p align="center">
 <img src="https://i.imgur.com/Clzj7Xs.png" alt="osTicket logo"/>
 </p>
 
@@ -23,9 +23,10 @@ Part 2: Installation of software dependencies and osTicket.<br />
 
 - Microsoft Azure Active Subscription (Creation of Reasearch Group, VMs, Virtual Networks, Subnets)
 - Enable Internet Information Services(IIS)
-- Install Web platform installer?
-- Item 4 Install MySQL set up username/pass
-- Item 5 Install C++ redistributbal
+- PHP Manager
+- Rewrite Manager
+- C++ Redistributbal
+- MySQL Server
 - Item 6 Configure permissions / install osTicket
 
 
@@ -171,8 +172,75 @@ Step 19.5: If unsuccessful. Navigate back to "Programs". Click "Uninstall a prog
 </p>
 <br />
 
-![image](https://github.com/jameswsm/osticket-prereqs/assets/170709350/a00701b7-fa87-49f7-9808-097780c5c0e7)
+![image](https://github.com/jameswsm/osticket-prereqs/assets/170709350/25096401-4cc7-43b0-8fb6-fe173b3951c5)
 <p>
-Step 20: Download PHP manager https://drive.google.com/file/d/1RHsNd4eWIOwaNpj3JW4vzzmzNUH86wY_/view?usp=share_link
+Step 20: Download and install PHP manager https://drive.google.com/file/d/1RHsNd4eWIOwaNpj3JW4vzzmzNUH86wY_/view?usp=share_link (PHPManagerForIIS_V1.5.0.msi)
 </p>
 <br />
+
+![image](https://github.com/jameswsm/osticket-prereqs/assets/170709350/d29df45d-f4d1-4bb1-8e82-e52724902fcc)
+<p>
+Step 21: Download and install the Rewrite Module https://drive.google.com/file/d/1tIK9GZBKj1JyUP87eewxgdNqn9pZmVmY/view?usp=share_link (rewrite_amd64_en-US.msi)
+</p>
+<br />
+
+![image](https://github.com/jameswsm/osticket-prereqs/assets/170709350/2f7ca269-391d-4b75-891b-907a0f78ab39)
+<p>
+Step 22: Navigate to C: drive from File Explorer. Create a new folder called PHP.
+</p>
+<br />
+
+![image](https://github.com/jameswsm/osticket-prereqs/assets/170709350/9402741a-7d78-46de-ab79-dc995145f121)
+<p>
+Step 23: Download PHP. https://drive.google.com/file/d/1snNMtLdCOpMtkCyD4mvl9yOOmvVIp9fP/view?usp=share_link (php-7.3.8-nts-Win32-VC15-x86.zip). 
+  Unzip the contents into C:\PHP 
+</p>
+<br />
+
+![image](https://github.com/jameswsm/osticket-prereqs/assets/170709350/cf720607-6007-4c61-bc7d-0e5d93a864d3)
+<p>
+Step 24: Download and install C++ Redistributable https://drive.google.com/file/d/1s1OsGF3-ioO0_9LYizPRiVuIkb3lFJgH/view?usp=share_link
+</p>
+<br />
+
+
+![image](https://github.com/jameswsm/osticket-prereqs/assets/170709350/fbd07b0e-a590-4fc4-b3da-26132b31266f)
+![image](https://github.com/jameswsm/osticket-prereqs/assets/170709350/ca8aca01-ad29-47cf-a4ca-f59dd63aa022)
+![image](https://github.com/jameswsm/osticket-prereqs/assets/170709350/22ab78d7-5691-45cf-a0bb-c0b7124c96b4)
+<p>
+Step 25: Download and install MySQL Server. https://drive.google.com/file/d/1_OWh9p7VQLcrB0q_V7qT8yHl0xo5gv7z/view?usp=share_link (mysql-5.5.62-win32.msi). Choose Typical Setup. Choose Standard Configuration. Create a Password
+</p>
+<br />
+
+![image](https://github.com/jameswsm/osticket-prereqs/assets/170709350/9cbc8af3-8d32-495c-b8a4-1543805321a7)
+<p>
+Step 26: Click Start. Type IIS. RIGHT-click Internet Information Services and choose "Run as Administrator"
+</p>
+<br />
+
+![image](https://github.com/jameswsm/osticket-prereqs/assets/170709350/90b3d9f7-b465-480f-8505-2afa5188f190)
+<p>
+Step 27: Double Click PHP Manager
+</p>
+<br />
+
+![image](https://github.com/jameswsm/osticket-prereqs/assets/170709350/c0844deb-683f-43f4-a215-9339b3ee2572)
+<p>
+Step 28: Register new PHP version. Provide the path: "php-cgi" inside the PHP folder
+</p>
+<br />
+
+![image](https://github.com/jameswsm/osticket-prereqs/assets/170709350/83a23692-c897-473b-93a3-e834445aca7a)
+<p>
+Step 29: Click the server (ex: vmOsTicket(vmOsTicket\jamesuser)). Click "Restart" under Manage Server
+</p>
+<br />
+
+![image]
+<p>
+Step 30: https://drive.google.com/file/d/1cQIErIgsuKE-E-sD_6SO0EBcV9bt4uJh/view?usp=drive_link
+</p>
+<br />
+
+
+
