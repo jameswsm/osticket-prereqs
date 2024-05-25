@@ -1,4 +1,4 @@
-![image](https://github.com/jameswsm/osticket-prereqs/assets/170709350/20efc2d7-df89-4375-96f8-33bc709015db)![image](https://github.com/jameswsm/osticket-prereqs/assets/170709350/b7cc4101-a3c3-4085-87c2-8a556afb58be)<p align="center">
+
 <img src="https://i.imgur.com/Clzj7Xs.png" alt="osTicket logo"/>
 </p>
 
@@ -27,7 +27,8 @@ Part 2: Installation of software dependencies and osTicket.<br />
 - Rewrite Manager
 - C++ Redistributbal
 - MySQL Server
-- Item 6 Configure permissions / install osTicket
+- Install osTicket
+- Assigning Permissions
 
 
 
@@ -118,7 +119,7 @@ Screen should look similar to this.
 <br />
 <br />
 
-<h2>Installation Steps (Part 2) Steps:  13 - somethingsomethingsomethingsomething</h2>
+<h2>Installation Steps (Part 2) Steps:  13 - 47</h2>
 
 
 ![image](https://github.com/jameswsm/osticket-prereqs/assets/170709350/2712a469-9053-4107-becd-4a8bf735d894)
@@ -236,11 +237,132 @@ Step 29: Click the server (ex: vmOsTicket(vmOsTicket\jamesuser)). Click "Restart
 </p>
 <br />
 
-![image]
+![image](https://github.com/jameswsm/osticket-prereqs/assets/170709350/b487ccac-368d-4749-b5e7-07af9357de2c)
 <p>
-Step 30: https://drive.google.com/file/d/1cQIErIgsuKE-E-sD_6SO0EBcV9bt4uJh/view?usp=drive_link
+Step 30: Download osTicket. https://drive.google.com/file/d/1cQIErIgsuKE-E-sD_6SO0EBcV9bt4uJh/view?usp=drive_link (v1.15.8). Drag "upload" folder into c:\inetpub\wwwroot 
 </p>
 <br />
 
+![image](https://github.com/jameswsm/osticket-prereqs/assets/170709350/3d06bb9b-3f7a-4569-8d0b-11d16435048e)
+<p>
+Step 31: Rename "upload" to "osTicket"
+</p>
+<br />
 
+![image](https://github.com/jameswsm/osticket-prereqs/assets/170709350/2b2757e1-e9ed-40e5-a84f-696d2299abf1)
+<p>
+Step 32: Click "Restart" inside of IIS
+</p>
+<br />
+
+![image](https://github.com/jameswsm/osticket-prereqs/assets/170709350/9f2d13ae-bd71-41e2-81a4-421ab07602af)
+<p>
+Step 33: Click the server (ex: vmOsTicket/jamesuser). Navigate to Sites -> Default Web Site -> click osTicket
+</p>
+<br />
+
+![image](https://github.com/jameswsm/osticket-prereqs/assets/170709350/c2a50ee8-c0cf-45ad-9267-b00dd51ae444)
+<p>
+Step 34: Click Browse on the right side of IIS, then this window will open
+</p>
+<br />
+
+![image](https://github.com/jameswsm/osticket-prereqs/assets/170709350/b06f6e78-c3ab-4161-ad60-d131434d4c3e)
+<p>
+Step 35: Double click PHP Manager. Click Enable or disable an extension
+</p>
+<br />
+
+![image](https://github.com/jameswsm/osticket-prereqs/assets/170709350/53cd630a-bf10-4fb7-a202-dd802472a3df)
+<p>
+Step 36: Enable the following: php_imap.dll, php_intl.dll, php_opcache.dll - Refreshing browser should look like this. 
+</p>
+<br />
+
+![image](https://github.com/jameswsm/osticket-prereqs/assets/170709350/ff8d7d67-764a-415a-8f7b-c6c5d8ac9f10)
+<p>
+Step 37: Navigate to ost-sampleconfig.php then rename this file ost-config.php
+</p>
+<br />
+
+![image](https://github.com/jameswsm/osticket-prereqs/assets/170709350/5dbbe8a5-30d1-4377-a81e-6fd6203d7959)
+<p>
+Step 38: ost-config.php -> Properties -> Security -> Advanced -> Disable inheritance -> Remove all inherited permissions from this object
+</p>
+<br />
+
+![image](https://github.com/jameswsm/osticket-prereqs/assets/170709350/c4063497-974a-437c-a6fc-bb825600a5da)
+<p>
+Step 39: Add -> Select a principal -> enter "everyone" in box -> Check Names -> click ok
+</p>
+<br />
+
+![image](https://github.com/jameswsm/osticket-prereqs/assets/170709350/10396b9c-0754-4300-9fdb-cde7d0fca47d)
+<p>
+Step 40: Give everyone full control -> Press Ok -> Apply -> Ok
+</p>
+<br />
+
+![image](https://github.com/jameswsm/osticket-prereqs/assets/170709350/6fa0d083-e82d-43af-807f-5be241a8cbf0)
+<p>
+Step 41: Click Continue on browser with osTicket open.
+</p>
+<br />
+
+![image](https://github.com/jameswsm/osticket-prereqs/assets/170709350/1841fb65-e844-4a29-b979-601bec42f9a5)
+<p>
+Step 42: Download and install Heidi SQL. https://www.heidisql.com/installers/HeidiSQL_12.3.0.6589_Setup.exe This will allow us to connect to the SQL server and set up a database that osTicket will use.
+</p>
+<br />
+
+![image](https://github.com/jameswsm/osticket-prereqs/assets/170709350/a153d2fe-7280-4643-8bb2-aa7f786374ba)
+<p>
+Step 43: Click New. Enter User(ex: root) and password. Click Open. This is the connection to the SQL server.
+</p>
+<br />
+
+![image](https://github.com/jameswsm/osticket-prereqs/assets/170709350/11790663-192a-47d7-b338-1d3dd0559d5a)
+<p>
+Step 44: Right click "Unnamed" and create a new Database called "osTicket"
+</p>
+<br />
+
+![image](https://github.com/jameswsm/osticket-prereqs/assets/170709350/908b39b4-864a-47c5-9e49-0f6983a4a46c)
+![image](https://github.com/jameswsm/osticket-prereqs/assets/170709350/b400233d-11cc-44a7-bdad-c39bb45f9577)
+![image](https://github.com/jameswsm/osticket-prereqs/assets/170709350/2728176d-0877-437b-bd04-72af77fc57e4)
+
+<p>
+Step 45: Fill out the osTicket installer form with the data you have chosen and click Install Now.
+</p>
+<br />
+
+![image](https://github.com/jameswsm/osticket-prereqs/assets/170709350/8359838f-cebe-459a-a63f-3d7f86863a7f)
+<p>
+Step 46: Clean up. Navigate to This PC -> Windows(C:) -> inetpub -> wwwroot -> osTicket and delete the "setup" folder
+</p>
+<br />
+
+![image](https://github.com/jameswsm/osticket-prereqs/assets/170709350/126e98bf-5680-4e7e-b9ea-f37a4ae8b465)
+<p>
+Step 47: Navigate to This PC -> Windows(C:) -> inetpub -> wwwroot -> osTicket -> include -> ost-config.php -> properties -> Security -> Advanced -> Click Everyone -> Edit -> Remove permissions: Full control, Modify, Write -> Ok -> Apply -> Ok -> Ok
+</p>
+<br />
+
+![image](https://github.com/jameswsm/osticket-prereqs/assets/170709350/f0deba4c-2cd8-441e-9bb9-af265ed93b28)
+<p>
+Installation of osTicket is now complete!    
+</p>
+<p>
+  URL for ADMIN: http://localhost/osTicket/scp/login.php
+</p>
+<p>
+  URL for end users to create tickets: http://localhost/osTicket/
+</p>
+<br />
+
+![image](https://github.com/jameswsm/osticket-prereqs/assets/170709350/bd2e65c5-99e1-4c2c-ab7f-d725257cbac9)
+<p>
+LOGIN as ADMIN will display:
+</p>
+<br />
 
